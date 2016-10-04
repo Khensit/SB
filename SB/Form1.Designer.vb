@@ -23,9 +23,6 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.mainNextButton = New System.Windows.Forms.Button()
         Me.mainPrevButton = New System.Windows.Forms.Button()
         Me.startPanel = New System.Windows.Forms.Panel()
@@ -35,15 +32,25 @@ Partial Class Form1
         Me.cfgSingerPanel = New System.Windows.Forms.Panel()
         Me.cfgSingerAddButton = New System.Windows.Forms.Button()
         Me.cfgSingerDataGridView = New System.Windows.Forms.DataGridView()
-        Me.CSingerBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.SingerNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SingerSongDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SingerCountryDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cfgJurorPanel = New System.Windows.Forms.Panel()
+        Me.cfgJurorDataGridView = New System.Windows.Forms.DataGridView()
+        Me.cfgJurorAddButton = New System.Windows.Forms.Button()
+        Me.jurorNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.jurorCountryDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.jurorWeightDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.JurorBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.singerNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.singerSongDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.singerCountryDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SingerBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.startPanel.SuspendLayout()
         Me.startTableLayoutPanel.SuspendLayout()
         Me.cfgSingerPanel.SuspendLayout()
         CType(Me.cfgSingerDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.CSingerBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.cfgJurorPanel.SuspendLayout()
+        CType(Me.cfgJurorDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.JurorBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SingerBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'mainNextButton
@@ -150,80 +157,136 @@ Partial Class Form1
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cfgSingerDataGridView.AutoGenerateColumns = False
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.cfgSingerDataGridView.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.cfgSingerDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.cfgSingerDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.SingerNameDataGridViewTextBoxColumn, Me.SingerSongDataGridViewTextBoxColumn, Me.SingerCountryDataGridViewTextBoxColumn})
-        Me.cfgSingerDataGridView.DataSource = Me.CSingerBindingSource
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.cfgSingerDataGridView.DefaultCellStyle = DataGridViewCellStyle2
+        Me.cfgSingerDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.singerNameDataGridViewTextBoxColumn, Me.singerSongDataGridViewTextBoxColumn, Me.singerCountryDataGridViewTextBoxColumn})
+        Me.cfgSingerDataGridView.DataSource = Me.SingerBindingSource
         Me.cfgSingerDataGridView.Location = New System.Drawing.Point(0, 41)
         Me.cfgSingerDataGridView.MultiSelect = False
         Me.cfgSingerDataGridView.Name = "cfgSingerDataGridView"
         Me.cfgSingerDataGridView.ReadOnly = True
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.cfgSingerDataGridView.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.cfgSingerDataGridView.RowHeadersVisible = False
+        Me.cfgSingerDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.cfgSingerDataGridView.Size = New System.Drawing.Size(484, 229)
         Me.cfgSingerDataGridView.TabIndex = 0
         '
-        'CSingerBindingSource
+        'cfgJurorPanel
         '
-        Me.CSingerBindingSource.DataSource = GetType(SB.Singer)
+        Me.cfgJurorPanel.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cfgJurorPanel.Controls.Add(Me.cfgJurorDataGridView)
+        Me.cfgJurorPanel.Controls.Add(Me.cfgJurorAddButton)
+        Me.cfgJurorPanel.Location = New System.Drawing.Point(0, 0)
+        Me.cfgJurorPanel.Name = "cfgJurorPanel"
+        Me.cfgJurorPanel.Size = New System.Drawing.Size(484, 270)
+        Me.cfgJurorPanel.TabIndex = 2
+        Me.cfgJurorPanel.Visible = False
         '
-        'SingerNameDataGridViewTextBoxColumn
+        'cfgJurorDataGridView
         '
-        Me.SingerNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.SingerNameDataGridViewTextBoxColumn.DataPropertyName = "Name"
-        Me.SingerNameDataGridViewTextBoxColumn.HeaderText = "Name"
-        Me.SingerNameDataGridViewTextBoxColumn.Name = "SingerNameDataGridViewTextBoxColumn"
-        Me.SingerNameDataGridViewTextBoxColumn.ReadOnly = True
-        Me.SingerNameDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.SingerNameDataGridViewTextBoxColumn.Width = 60
+        Me.cfgJurorDataGridView.AllowUserToAddRows = False
+        Me.cfgJurorDataGridView.AllowUserToDeleteRows = False
+        Me.cfgJurorDataGridView.AllowUserToResizeColumns = False
+        Me.cfgJurorDataGridView.AllowUserToResizeRows = False
+        Me.cfgJurorDataGridView.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cfgJurorDataGridView.AutoGenerateColumns = False
+        Me.cfgJurorDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.cfgJurorDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.jurorNameDataGridViewTextBoxColumn, Me.jurorCountryDataGridViewTextBoxColumn, Me.jurorWeightDataGridViewTextBoxColumn})
+        Me.cfgJurorDataGridView.DataSource = Me.JurorBindingSource
+        Me.cfgJurorDataGridView.Location = New System.Drawing.Point(0, 41)
+        Me.cfgJurorDataGridView.MultiSelect = False
+        Me.cfgJurorDataGridView.Name = "cfgJurorDataGridView"
+        Me.cfgJurorDataGridView.ReadOnly = True
+        Me.cfgJurorDataGridView.RowHeadersVisible = False
+        Me.cfgJurorDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.cfgJurorDataGridView.Size = New System.Drawing.Size(484, 229)
+        Me.cfgJurorDataGridView.TabIndex = 1
         '
-        'SingerSongDataGridViewTextBoxColumn
+        'cfgJurorAddButton
         '
-        Me.SingerSongDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.SingerSongDataGridViewTextBoxColumn.DataPropertyName = "Song"
-        Me.SingerSongDataGridViewTextBoxColumn.HeaderText = "Song"
-        Me.SingerSongDataGridViewTextBoxColumn.Name = "SingerSongDataGridViewTextBoxColumn"
-        Me.SingerSongDataGridViewTextBoxColumn.ReadOnly = True
-        Me.SingerSongDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.SingerSongDataGridViewTextBoxColumn.Width = 57
+        Me.cfgJurorAddButton.Location = New System.Drawing.Point(12, 12)
+        Me.cfgJurorAddButton.Name = "cfgJurorAddButton"
+        Me.cfgJurorAddButton.Size = New System.Drawing.Size(104, 23)
+        Me.cfgJurorAddButton.TabIndex = 0
+        Me.cfgJurorAddButton.Text = "Add new juror"
+        Me.cfgJurorAddButton.UseVisualStyleBackColor = True
         '
-        'SingerCountryDataGridViewTextBoxColumn
+        'jurorNameDataGridViewTextBoxColumn
         '
-        Me.SingerCountryDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.SingerCountryDataGridViewTextBoxColumn.DataPropertyName = "Country"
-        Me.SingerCountryDataGridViewTextBoxColumn.HeaderText = "Country"
-        Me.SingerCountryDataGridViewTextBoxColumn.Name = "SingerCountryDataGridViewTextBoxColumn"
-        Me.SingerCountryDataGridViewTextBoxColumn.ReadOnly = True
-        Me.SingerCountryDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.SingerCountryDataGridViewTextBoxColumn.Width = 68
+        Me.jurorNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.jurorNameDataGridViewTextBoxColumn.DataPropertyName = "Name"
+        Me.jurorNameDataGridViewTextBoxColumn.HeaderText = "Name"
+        Me.jurorNameDataGridViewTextBoxColumn.Name = "jurorNameDataGridViewTextBoxColumn"
+        Me.jurorNameDataGridViewTextBoxColumn.ReadOnly = True
+        Me.jurorNameDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.jurorNameDataGridViewTextBoxColumn.Width = 60
+        '
+        'jurorCountryDataGridViewTextBoxColumn
+        '
+        Me.jurorCountryDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.jurorCountryDataGridViewTextBoxColumn.DataPropertyName = "Country"
+        Me.jurorCountryDataGridViewTextBoxColumn.HeaderText = "Country"
+        Me.jurorCountryDataGridViewTextBoxColumn.Name = "jurorCountryDataGridViewTextBoxColumn"
+        Me.jurorCountryDataGridViewTextBoxColumn.ReadOnly = True
+        Me.jurorCountryDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.jurorCountryDataGridViewTextBoxColumn.Width = 68
+        '
+        'jurorWeightDataGridViewTextBoxColumn
+        '
+        Me.jurorWeightDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.jurorWeightDataGridViewTextBoxColumn.DataPropertyName = "Weight"
+        Me.jurorWeightDataGridViewTextBoxColumn.HeaderText = "Weight"
+        Me.jurorWeightDataGridViewTextBoxColumn.Name = "jurorWeightDataGridViewTextBoxColumn"
+        Me.jurorWeightDataGridViewTextBoxColumn.ReadOnly = True
+        Me.jurorWeightDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.jurorWeightDataGridViewTextBoxColumn.Width = 66
+        '
+        'JurorBindingSource
+        '
+        Me.JurorBindingSource.DataSource = GetType(SB.Juror)
+        '
+        'singerNameDataGridViewTextBoxColumn
+        '
+        Me.singerNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.singerNameDataGridViewTextBoxColumn.DataPropertyName = "Name"
+        Me.singerNameDataGridViewTextBoxColumn.HeaderText = "Name"
+        Me.singerNameDataGridViewTextBoxColumn.Name = "singerNameDataGridViewTextBoxColumn"
+        Me.singerNameDataGridViewTextBoxColumn.ReadOnly = True
+        Me.singerNameDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.singerNameDataGridViewTextBoxColumn.Width = 60
+        '
+        'singerSongDataGridViewTextBoxColumn
+        '
+        Me.singerSongDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.singerSongDataGridViewTextBoxColumn.DataPropertyName = "Song"
+        Me.singerSongDataGridViewTextBoxColumn.HeaderText = "Song"
+        Me.singerSongDataGridViewTextBoxColumn.Name = "singerSongDataGridViewTextBoxColumn"
+        Me.singerSongDataGridViewTextBoxColumn.ReadOnly = True
+        Me.singerSongDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.singerSongDataGridViewTextBoxColumn.Width = 57
+        '
+        'singerCountryDataGridViewTextBoxColumn
+        '
+        Me.singerCountryDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.singerCountryDataGridViewTextBoxColumn.DataPropertyName = "Country"
+        Me.singerCountryDataGridViewTextBoxColumn.HeaderText = "Country"
+        Me.singerCountryDataGridViewTextBoxColumn.Name = "singerCountryDataGridViewTextBoxColumn"
+        Me.singerCountryDataGridViewTextBoxColumn.ReadOnly = True
+        Me.singerCountryDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.singerCountryDataGridViewTextBoxColumn.Width = 68
+        '
+        'SingerBindingSource
+        '
+        Me.SingerBindingSource.DataSource = GetType(SB.Singer)
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(484, 311)
+        Me.Controls.Add(Me.cfgJurorPanel)
         Me.Controls.Add(Me.cfgSingerPanel)
         Me.Controls.Add(Me.startPanel)
         Me.Controls.Add(Me.mainNextButton)
@@ -235,7 +298,10 @@ Partial Class Form1
         Me.startTableLayoutPanel.ResumeLayout(False)
         Me.cfgSingerPanel.ResumeLayout(False)
         CType(Me.cfgSingerDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.CSingerBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.cfgJurorPanel.ResumeLayout(False)
+        CType(Me.cfgJurorDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.JurorBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SingerBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -248,8 +314,15 @@ Partial Class Form1
     Friend WithEvents cfgSingerPanel As Panel
     Friend WithEvents cfgSingerAddButton As Button
     Friend WithEvents cfgSingerDataGridView As DataGridView
-    Friend WithEvents CSingerBindingSource As BindingSource
-    Friend WithEvents SingerNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents SingerSongDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents SingerCountryDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents singerNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents singerSongDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents singerCountryDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents cfgJurorPanel As Panel
+    Friend WithEvents cfgJurorDataGridView As DataGridView
+    Friend WithEvents cfgJurorAddButton As Button
+    Friend WithEvents SingerBindingSource As BindingSource
+    Friend WithEvents JurorBindingSource As BindingSource
+    Friend WithEvents jurorNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents jurorCountryDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents jurorWeightDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class

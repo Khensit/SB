@@ -1,4 +1,6 @@
-﻿Public Class CfgSingerImpl
+﻿Imports System.Data.SqlClient
+
+Public Class CfgJurorImpl
     Inherits SequencePanel
 
     Public Structure Data
@@ -28,7 +30,7 @@
 
     Private Sub OnVisibilityChangedImpl(visible As Boolean)
         If visible Then
-            mData.Grid.DataSource = mData.sharedData.Singers
+            mData.Grid.DataSource = mData.sharedData.Jury
         End If
     End Sub
 

@@ -18,6 +18,16 @@
         End Set
     End Property
 
+    Public Property Jury As List(Of Juror)
+        Get
+            Return Backup.Jury
+        End Get
+        Set(value As List(Of Juror))
+            Backup.Jury = value
+        End Set
+    End Property
+
+
 #End Region
 
 End Class
