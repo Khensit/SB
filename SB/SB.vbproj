@@ -89,8 +89,13 @@
   <ItemGroup>
     <Compile Include="Backup.vb" />
     <Compile Include="CfgJurorImpl.vb" />
+    <Compile Include="CfgPointsImpl.vb" />
     <Compile Include="CfgSingerImpl.vb" />
+    <Compile Include="DGVColumnCountry.vb" />
+    <Compile Include="DGVColumnNumber.vb" />
+    <Compile Include="DGVColumnText.vb" />
     <Compile Include="Juror.vb" />
+    <Compile Include="Points.vb" />
     <Compile Include="Singer.vb" />
     <Compile Include="Country.vb" />
     <Compile Include="SharedData.vb" />
@@ -136,8 +141,6 @@
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
-    <None Include="My Project\DataSources\Juror.datasource" />
-    <None Include="My Project\DataSources\Singer.datasource" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>My</CustomToolNamespace>
@@ -157,7 +160,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

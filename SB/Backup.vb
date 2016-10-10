@@ -5,6 +5,7 @@ Public Class Backup
 
     Public Property Singers As List(Of Singer)
     Public Property Jury As List(Of Juror)
+    Public Property Points As List(Of Points)
 
 #End Region
 
@@ -14,6 +15,7 @@ Public Class Backup
 
         Singers = New List(Of Singer)
         Jury = New List(Of Juror)
+        Points = New List(Of Points)
 
     End Sub
 

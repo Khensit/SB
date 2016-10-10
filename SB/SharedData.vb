@@ -27,6 +27,14 @@
         End Set
     End Property
 
+    Public Property Points As List(Of Points)
+        Get
+            Return Backup.Points
+        End Get
+        Set(value As List(Of Points))
+            Backup.Points = value
+        End Set
+    End Property
 
 #End Region
 

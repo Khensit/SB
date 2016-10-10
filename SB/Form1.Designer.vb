@@ -22,7 +22,6 @@ Partial Class Form1
     'Ne la modifiez pas à l'aide de l'éditeur de code.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Me.mainNextButton = New System.Windows.Forms.Button()
         Me.mainPrevButton = New System.Windows.Forms.Button()
         Me.startPanel = New System.Windows.Forms.Panel()
@@ -33,30 +32,24 @@ Partial Class Form1
         Me.cfgSingerAddButton = New System.Windows.Forms.Button()
         Me.cfgSingerDataGridView = New System.Windows.Forms.DataGridView()
         Me.cfgJurorPanel = New System.Windows.Forms.Panel()
-        Me.cfgJurorDataGridView = New System.Windows.Forms.DataGridView()
         Me.cfgJurorAddButton = New System.Windows.Forms.Button()
-        Me.jurorNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.jurorCountryDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.jurorWeightDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.JurorBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.singerNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.singerSongDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.singerCountryDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SingerBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.cfgJurorDataGridView = New System.Windows.Forms.DataGridView()
+        Me.cfgPointsPanel = New System.Windows.Forms.Panel()
+        Me.cfgPointsDataGridView = New System.Windows.Forms.DataGridView()
         Me.startPanel.SuspendLayout()
         Me.startTableLayoutPanel.SuspendLayout()
         Me.cfgSingerPanel.SuspendLayout()
         CType(Me.cfgSingerDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.cfgJurorPanel.SuspendLayout()
         CType(Me.cfgJurorDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.JurorBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.SingerBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.cfgPointsPanel.SuspendLayout()
+        CType(Me.cfgPointsDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'mainNextButton
         '
         Me.mainNextButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.mainNextButton.Location = New System.Drawing.Point(397, 276)
+        Me.mainNextButton.Location = New System.Drawing.Point(606, 451)
         Me.mainNextButton.Name = "mainNextButton"
         Me.mainNextButton.Size = New System.Drawing.Size(75, 23)
         Me.mainNextButton.TabIndex = 1
@@ -66,7 +59,7 @@ Partial Class Form1
         'mainPrevButton
         '
         Me.mainPrevButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.mainPrevButton.Location = New System.Drawing.Point(12, 276)
+        Me.mainPrevButton.Location = New System.Drawing.Point(12, 451)
         Me.mainPrevButton.Name = "mainPrevButton"
         Me.mainPrevButton.Size = New System.Drawing.Size(75, 23)
         Me.mainPrevButton.TabIndex = 2
@@ -79,7 +72,7 @@ Partial Class Form1
         Me.startPanel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.startPanel.Location = New System.Drawing.Point(0, 0)
         Me.startPanel.Name = "startPanel"
-        Me.startPanel.Size = New System.Drawing.Size(484, 311)
+        Me.startPanel.Size = New System.Drawing.Size(693, 486)
         Me.startPanel.TabIndex = 3
         '
         'startTableLayoutPanel
@@ -100,16 +93,16 @@ Partial Class Form1
         Me.startTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
         Me.startTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
         Me.startTableLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
-        Me.startTableLayoutPanel.Size = New System.Drawing.Size(484, 311)
+        Me.startTableLayoutPanel.Size = New System.Drawing.Size(693, 486)
         Me.startTableLayoutPanel.TabIndex = 0
         '
         'startCreateButton
         '
         Me.startTableLayoutPanel.SetColumnSpan(Me.startCreateButton, 2)
         Me.startCreateButton.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.startCreateButton.Location = New System.Drawing.Point(124, 65)
+        Me.startCreateButton.Location = New System.Drawing.Point(176, 100)
         Me.startCreateButton.Name = "startCreateButton"
-        Me.startCreateButton.Size = New System.Drawing.Size(236, 56)
+        Me.startCreateButton.Size = New System.Drawing.Size(340, 91)
         Me.startCreateButton.TabIndex = 0
         Me.startCreateButton.Text = "Create Configuration"
         Me.startCreateButton.UseVisualStyleBackColor = True
@@ -118,9 +111,9 @@ Partial Class Form1
         '
         Me.startTableLayoutPanel.SetColumnSpan(Me.startLoadButton, 2)
         Me.startLoadButton.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.startLoadButton.Location = New System.Drawing.Point(124, 189)
+        Me.startLoadButton.Location = New System.Drawing.Point(176, 294)
         Me.startLoadButton.Name = "startLoadButton"
-        Me.startLoadButton.Size = New System.Drawing.Size(236, 56)
+        Me.startLoadButton.Size = New System.Drawing.Size(340, 91)
         Me.startLoadButton.TabIndex = 1
         Me.startLoadButton.Text = "Load Configuration File"
         Me.startLoadButton.UseVisualStyleBackColor = True
@@ -134,7 +127,7 @@ Partial Class Form1
         Me.cfgSingerPanel.Controls.Add(Me.cfgSingerDataGridView)
         Me.cfgSingerPanel.Location = New System.Drawing.Point(0, 0)
         Me.cfgSingerPanel.Name = "cfgSingerPanel"
-        Me.cfgSingerPanel.Size = New System.Drawing.Size(484, 270)
+        Me.cfgSingerPanel.Size = New System.Drawing.Size(693, 445)
         Me.cfgSingerPanel.TabIndex = 2
         Me.cfgSingerPanel.Visible = False
         '
@@ -156,17 +149,14 @@ Partial Class Form1
         Me.cfgSingerDataGridView.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cfgSingerDataGridView.AutoGenerateColumns = False
         Me.cfgSingerDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.cfgSingerDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.singerNameDataGridViewTextBoxColumn, Me.singerSongDataGridViewTextBoxColumn, Me.singerCountryDataGridViewTextBoxColumn})
-        Me.cfgSingerDataGridView.DataSource = Me.SingerBindingSource
         Me.cfgSingerDataGridView.Location = New System.Drawing.Point(0, 41)
         Me.cfgSingerDataGridView.MultiSelect = False
         Me.cfgSingerDataGridView.Name = "cfgSingerDataGridView"
         Me.cfgSingerDataGridView.ReadOnly = True
         Me.cfgSingerDataGridView.RowHeadersVisible = False
         Me.cfgSingerDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.cfgSingerDataGridView.Size = New System.Drawing.Size(484, 229)
+        Me.cfgSingerDataGridView.Size = New System.Drawing.Size(693, 404)
         Me.cfgSingerDataGridView.TabIndex = 0
         '
         'cfgJurorPanel
@@ -174,35 +164,13 @@ Partial Class Form1
         Me.cfgJurorPanel.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cfgJurorPanel.Controls.Add(Me.cfgJurorDataGridView)
         Me.cfgJurorPanel.Controls.Add(Me.cfgJurorAddButton)
+        Me.cfgJurorPanel.Controls.Add(Me.cfgJurorDataGridView)
         Me.cfgJurorPanel.Location = New System.Drawing.Point(0, 0)
         Me.cfgJurorPanel.Name = "cfgJurorPanel"
-        Me.cfgJurorPanel.Size = New System.Drawing.Size(484, 270)
+        Me.cfgJurorPanel.Size = New System.Drawing.Size(693, 445)
         Me.cfgJurorPanel.TabIndex = 2
         Me.cfgJurorPanel.Visible = False
-        '
-        'cfgJurorDataGridView
-        '
-        Me.cfgJurorDataGridView.AllowUserToAddRows = False
-        Me.cfgJurorDataGridView.AllowUserToDeleteRows = False
-        Me.cfgJurorDataGridView.AllowUserToResizeColumns = False
-        Me.cfgJurorDataGridView.AllowUserToResizeRows = False
-        Me.cfgJurorDataGridView.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cfgJurorDataGridView.AutoGenerateColumns = False
-        Me.cfgJurorDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.cfgJurorDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.jurorNameDataGridViewTextBoxColumn, Me.jurorCountryDataGridViewTextBoxColumn, Me.jurorWeightDataGridViewTextBoxColumn})
-        Me.cfgJurorDataGridView.DataSource = Me.JurorBindingSource
-        Me.cfgJurorDataGridView.Location = New System.Drawing.Point(0, 41)
-        Me.cfgJurorDataGridView.MultiSelect = False
-        Me.cfgJurorDataGridView.Name = "cfgJurorDataGridView"
-        Me.cfgJurorDataGridView.ReadOnly = True
-        Me.cfgJurorDataGridView.RowHeadersVisible = False
-        Me.cfgJurorDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.cfgJurorDataGridView.Size = New System.Drawing.Size(484, 229)
-        Me.cfgJurorDataGridView.TabIndex = 1
         '
         'cfgJurorAddButton
         '
@@ -213,81 +181,60 @@ Partial Class Form1
         Me.cfgJurorAddButton.Text = "Add new juror"
         Me.cfgJurorAddButton.UseVisualStyleBackColor = True
         '
-        'jurorNameDataGridViewTextBoxColumn
+        'cfgJurorDataGridView
         '
-        Me.jurorNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.jurorNameDataGridViewTextBoxColumn.DataPropertyName = "Name"
-        Me.jurorNameDataGridViewTextBoxColumn.HeaderText = "Name"
-        Me.jurorNameDataGridViewTextBoxColumn.Name = "jurorNameDataGridViewTextBoxColumn"
-        Me.jurorNameDataGridViewTextBoxColumn.ReadOnly = True
-        Me.jurorNameDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.jurorNameDataGridViewTextBoxColumn.Width = 60
+        Me.cfgJurorDataGridView.AllowUserToAddRows = False
+        Me.cfgJurorDataGridView.AllowUserToDeleteRows = False
+        Me.cfgJurorDataGridView.AllowUserToResizeColumns = False
+        Me.cfgJurorDataGridView.AllowUserToResizeRows = False
+        Me.cfgJurorDataGridView.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cfgJurorDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.cfgJurorDataGridView.Location = New System.Drawing.Point(0, 41)
+        Me.cfgJurorDataGridView.MultiSelect = False
+        Me.cfgJurorDataGridView.Name = "cfgJurorDataGridView"
+        Me.cfgJurorDataGridView.ReadOnly = True
+        Me.cfgJurorDataGridView.RowHeadersVisible = False
+        Me.cfgJurorDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.cfgJurorDataGridView.Size = New System.Drawing.Size(693, 404)
+        Me.cfgJurorDataGridView.TabIndex = 1
         '
-        'jurorCountryDataGridViewTextBoxColumn
+        'cfgPointsPanel
         '
-        Me.jurorCountryDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.jurorCountryDataGridViewTextBoxColumn.DataPropertyName = "Country"
-        Me.jurorCountryDataGridViewTextBoxColumn.HeaderText = "Country"
-        Me.jurorCountryDataGridViewTextBoxColumn.Name = "jurorCountryDataGridViewTextBoxColumn"
-        Me.jurorCountryDataGridViewTextBoxColumn.ReadOnly = True
-        Me.jurorCountryDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.jurorCountryDataGridViewTextBoxColumn.Width = 68
+        Me.cfgPointsPanel.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cfgPointsPanel.Controls.Add(Me.cfgPointsDataGridView)
+        Me.cfgPointsPanel.Location = New System.Drawing.Point(0, 0)
+        Me.cfgPointsPanel.Name = "cfgPointsPanel"
+        Me.cfgPointsPanel.Size = New System.Drawing.Size(693, 445)
+        Me.cfgPointsPanel.TabIndex = 2
+        Me.cfgPointsPanel.Visible = False
         '
-        'jurorWeightDataGridViewTextBoxColumn
+        'cfgPointsDataGridView
         '
-        Me.jurorWeightDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.jurorWeightDataGridViewTextBoxColumn.DataPropertyName = "Weight"
-        Me.jurorWeightDataGridViewTextBoxColumn.HeaderText = "Weight"
-        Me.jurorWeightDataGridViewTextBoxColumn.Name = "jurorWeightDataGridViewTextBoxColumn"
-        Me.jurorWeightDataGridViewTextBoxColumn.ReadOnly = True
-        Me.jurorWeightDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.jurorWeightDataGridViewTextBoxColumn.Width = 66
-        '
-        'JurorBindingSource
-        '
-        Me.JurorBindingSource.DataSource = GetType(SB.Juror)
-        '
-        'singerNameDataGridViewTextBoxColumn
-        '
-        Me.singerNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.singerNameDataGridViewTextBoxColumn.DataPropertyName = "Name"
-        Me.singerNameDataGridViewTextBoxColumn.HeaderText = "Name"
-        Me.singerNameDataGridViewTextBoxColumn.Name = "singerNameDataGridViewTextBoxColumn"
-        Me.singerNameDataGridViewTextBoxColumn.ReadOnly = True
-        Me.singerNameDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.singerNameDataGridViewTextBoxColumn.Width = 60
-        '
-        'singerSongDataGridViewTextBoxColumn
-        '
-        Me.singerSongDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.singerSongDataGridViewTextBoxColumn.DataPropertyName = "Song"
-        Me.singerSongDataGridViewTextBoxColumn.HeaderText = "Song"
-        Me.singerSongDataGridViewTextBoxColumn.Name = "singerSongDataGridViewTextBoxColumn"
-        Me.singerSongDataGridViewTextBoxColumn.ReadOnly = True
-        Me.singerSongDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.singerSongDataGridViewTextBoxColumn.Width = 57
-        '
-        'singerCountryDataGridViewTextBoxColumn
-        '
-        Me.singerCountryDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.singerCountryDataGridViewTextBoxColumn.DataPropertyName = "Country"
-        Me.singerCountryDataGridViewTextBoxColumn.HeaderText = "Country"
-        Me.singerCountryDataGridViewTextBoxColumn.Name = "singerCountryDataGridViewTextBoxColumn"
-        Me.singerCountryDataGridViewTextBoxColumn.ReadOnly = True
-        Me.singerCountryDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.singerCountryDataGridViewTextBoxColumn.Width = 68
-        '
-        'SingerBindingSource
-        '
-        Me.SingerBindingSource.DataSource = GetType(SB.Singer)
+        Me.cfgPointsDataGridView.AllowUserToAddRows = False
+        Me.cfgPointsDataGridView.AllowUserToDeleteRows = False
+        Me.cfgPointsDataGridView.AllowUserToResizeColumns = False
+        Me.cfgPointsDataGridView.AllowUserToResizeRows = False
+        Me.cfgPointsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.cfgPointsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.cfgPointsDataGridView.Location = New System.Drawing.Point(0, 0)
+        Me.cfgPointsDataGridView.MultiSelect = False
+        Me.cfgPointsDataGridView.Name = "cfgPointsDataGridView"
+        Me.cfgPointsDataGridView.RowHeadersVisible = False
+        Me.cfgPointsDataGridView.Size = New System.Drawing.Size(693, 445)
+        Me.cfgPointsDataGridView.TabIndex = 0
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(484, 311)
-        Me.Controls.Add(Me.cfgJurorPanel)
+        Me.ClientSize = New System.Drawing.Size(693, 486)
+        Me.Controls.Add(Me.cfgPointsPanel)
         Me.Controls.Add(Me.cfgSingerPanel)
+        Me.Controls.Add(Me.cfgJurorPanel)
         Me.Controls.Add(Me.startPanel)
         Me.Controls.Add(Me.mainNextButton)
         Me.Controls.Add(Me.mainPrevButton)
@@ -300,8 +247,8 @@ Partial Class Form1
         CType(Me.cfgSingerDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.cfgJurorPanel.ResumeLayout(False)
         CType(Me.cfgJurorDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.JurorBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.SingerBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.cfgPointsPanel.ResumeLayout(False)
+        CType(Me.cfgPointsDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -314,15 +261,9 @@ Partial Class Form1
     Friend WithEvents cfgSingerPanel As Panel
     Friend WithEvents cfgSingerAddButton As Button
     Friend WithEvents cfgSingerDataGridView As DataGridView
-    Friend WithEvents singerNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents singerSongDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents singerCountryDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents cfgJurorPanel As Panel
     Friend WithEvents cfgJurorDataGridView As DataGridView
     Friend WithEvents cfgJurorAddButton As Button
-    Friend WithEvents SingerBindingSource As BindingSource
-    Friend WithEvents JurorBindingSource As BindingSource
-    Friend WithEvents jurorNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents jurorCountryDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents jurorWeightDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents cfgPointsPanel As Panel
+    Friend WithEvents cfgPointsDataGridView As DataGridView
 End Class

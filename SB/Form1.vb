@@ -5,6 +5,7 @@
     Private mStartPanelImpl As StartPanelImpl
     Private mCfgSingerImpl As CfgSingerImpl
     Private mCfgJurorImpl As CfgJurorImpl
+    Private mCfgPointsImpl As CfgPointsImpl
 
     Public Sub New()
 
@@ -13,12 +14,19 @@
 
         ' Ajoutez une initialisation quelconque après l'appel InitializeComponent().
 
+        mCfgPointsImpl = New CfgPointsImpl(New CfgPointsImpl.Data With {
+            .Panel = cfgPointsPanel,
+            .Grid = cfgPointsDataGridView,
+            .sharedData = mSharedData
+        })
+
         mCfgJurorImpl = New CfgJurorImpl(New CfgJurorImpl.Data With {
             .Panel = cfgJurorPanel,
             .Add = cfgJurorAddButton,
             .Grid = cfgJurorDataGridView,
             .sharedData = mSharedData
         })
+        mCfgJurorImpl.Child = mCfgPointsImpl
 
         mCfgSingerImpl = New CfgSingerImpl(New CfgSingerImpl.Data With {
             .Panel = cfgSingerPanel,
